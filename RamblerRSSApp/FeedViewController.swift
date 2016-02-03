@@ -10,7 +10,7 @@ import UIKit
 import MediaRSSParser
 import AFNetworking
 
-class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: Instance Variables
     
@@ -18,9 +18,13 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let cellIdentifier = "FeedCell"
     let imageCellIdentifier = "ImageCell"
     var selectedIndexPath: NSIndexPath?
+    var previousIndexPath: NSIndexPath?
+    
+    @IBAction func refreshData(sender: UIBarButtonItem) {
+        refreshData()
+    }
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchTextField: UITextField!
     
     let urlDict = [
         "http://www.gazeta.ru/export/rss/lenta.xml",
@@ -35,7 +39,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        parseForQuery("")
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -65,8 +68,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: Refresh Content
     
     func refreshData() {
-        searchTextField.resignFirstResponder()
-        parseForQuery(searchTextField.text)
+        items = []
+        parseForQuery("")
     }
     
     func reloadTableViewContent() {
@@ -81,43 +84,51 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let count = urlDict.count
         
         var i = 0
-        
-            parser.parseRSSFeed(urlDict[i],
-                parameters: parametersForQuery(query),
-                success: {(let channel: RSSChannel!) -> Void in
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        self.convertItemPropertiesToPlainText(channel.items as! [RSSItem])
-                        self.items += (channel.items as! [RSSItem])
-                        self.channels.append(channel)
-                        
-                        if count > 1  {
-                            i++
-                            while i < count {
-                                self.parser.parseRSSFeed(self.urlDict[i],
-                                    parameters: self.parametersForQuery(query),
-                                    success: {(let channel: RSSChannel!) -> Void in
-                                        self.convertItemPropertiesToPlainText(channel.items as! [RSSItem])
-                                        self.items += (channel.items as! [RSSItem])
-                                        self.channels.append(channel)
-                                        self.reloadTableViewContent()
-                                    },
-                                    failure: {(let error:NSError!) -> Void in
-                                        //                self.hideProgressHUD()
-                                        print("Error: \(error)")
-                                        return
-                                })
-                                i++
-                            }
-                        } else {
-                            self.reloadTableViewContent()
-                        }
-                    })
-    //                self.hideProgressHUD()
+        parser.parseRSSFeed(urlDict[i],
+            parameters: parametersForQuery(query),
+            success: {(let channel: RSSChannel!) -> Void in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.convertItemPropertiesToPlainText(channel.items as! [RSSItem])
+                    self.items += (channel.items as! [RSSItem])
+                    for item in self.items {
+                        item.title = "\(channel.title): \(item.title)"
+                    }
+                    self.channels.append(channel)
                     
-                }, failure: {(let error:NSError!) -> Void in
-                    //                self.hideProgressHUD()
-                    print("Error: \(error)")
-                    return
+                    if count > 1  {
+                        i++
+                        while i < count {
+                            self.parser.parseRSSFeed(self.urlDict[i],
+                                parameters: self.parametersForQuery(query),
+                                success: {(let channel: RSSChannel!) -> Void in
+                                    self.convertItemPropertiesToPlainText(channel.items as! [RSSItem])
+                                    let editedItems: [RSSItem] =  channel.items as! [RSSItem]
+
+                                    for item in editedItems {
+                                        item.title = "\(channel.title): \(item.title)"
+                                    }
+                                    
+                                    self.items += editedItems
+                                    self.channels.append(channel)
+                                    self.reloadTableViewContent()
+                                },
+                                failure: {(let error:NSError!) -> Void in
+                                    //                self.hideProgressHUD()
+                                    print("Error: \(error)")
+                                    return
+                            })
+                            i++
+                        }
+                    } else {
+                        self.reloadTableViewContent()
+                    }
+                })
+    //                self.hideProgressHUD()
+                
+            }, failure: {(let error:NSError!) -> Void in
+                //                self.hideProgressHUD()
+                print("Error: \(error)")
+                return
             })
     }
     
@@ -166,7 +177,10 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        print(self.channels)
+        items = items.sort({
+            $1.pubDate.isLessThanDate($0.pubDate)
+        })
+        
         if hasImageAtIndexPath(indexPath) {
             return imageCellAtIndexPath(indexPath)
         } else {
@@ -183,13 +197,15 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             selectedIndexPath = indexPath
         }
         
-        var indexPaths : Array<NSIndexPath> = []
+        var indexPaths : [NSIndexPath] = []
         if let previous = previousIndexPath {
             indexPaths += [previous]
         }
+        
         if let current = selectedIndexPath {
             indexPaths += [current]
         }
+        
         if indexPaths.count > 0 {
             tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
         }
@@ -210,7 +226,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if let selectedIndexPath = selectedIndexPath {
             if selectedIndexPath.row == indexPath.row {
-                return 165
+                return 200
             }
         }
         
@@ -255,6 +271,10 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.subtitleLabel.hidden = false
         } else {
             cell.subtitleLabel.hidden = true
+        }
+        
+        if previousIndexPath != selectedIndexPath {
+            cell.subtitleLabel.hidden = false
         }
         
         let item = items[indexPath.row] as RSSItem
@@ -313,13 +333,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.customImageView.setImageWithURL(url)
         }
     }
-    
-    // MARK: UITextFieldDelegate
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        refreshData()
-        return false
-    }
 
     /*
     // MARK: - Navigation
@@ -331,4 +344,15 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     */
 
+}
+
+
+extension NSDate {
+    func isGreaterThanDate(dateToCompare : NSDate) -> Bool {
+        return self.compare(dateToCompare) == NSComparisonResult.OrderedDescending
+    }
+    
+    func isLessThanDate(dateToCompare : NSDate) -> Bool {
+        return self.compare(dateToCompare) == NSComparisonResult.OrderedAscending
+    }
 }
