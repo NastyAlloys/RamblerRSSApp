@@ -1,0 +1,6 @@
+framework module MediaRSSParser {
+  umbrella header "MediaRSSParser-umbrella.h"
+
+  export *
+  module * { export * }
+}
