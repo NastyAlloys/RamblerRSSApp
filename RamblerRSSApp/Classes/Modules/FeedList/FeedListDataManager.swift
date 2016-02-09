@@ -28,7 +28,6 @@ class FeedListDataManager: NSObject {
             parameters: nil,
             success: {(let channel: RSSChannel!) -> Void in
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                
                     self.convertItemPropertiesToPlainText(channel.items as! [RSSItem])
                     let editedItems: [RSSItem] =  channel.items as! [RSSItem]
                     

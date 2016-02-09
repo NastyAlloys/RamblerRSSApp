@@ -13,6 +13,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="zCQ-zt-hJn">
+                            <rect key="frame" x="0.0" y="87" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hSU-Ec-ZTl">
+                                    <rect key="frame" x="290" y="12" width="20" height="20"/>
+                                </activityIndicatorView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="hSU-Ec-ZTl" firstAttribute="centerX" secondItem="zCQ-zt-hJn" secondAttribute="centerX" id="hPg-pK-RPx"/>
+                                <constraint firstItem="hSU-Ec-ZTl" firstAttribute="centerY" secondItem="zCQ-zt-hJn" secondAttribute="centerY" id="xsi-Ca-yqh"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCellIdentifier" textLabel="B5v-Ut-c7w" detailTextLabel="1SY-gc-5gH" rowHeight="59" style="IBUITableViewCellStyleSubtitle" id="gei-DQ-gr7">
                                 <rect key="frame" x="0.0" y="28" width="600" height="59"/>
@@ -45,10 +59,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="btz-xT-faI"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="hSU-Ec-ZTl" id="DZ2-Cv-fXV"/>
+                        <outlet property="activityIndicatorView" destination="zCQ-zt-hJn" id="VKk-06-VDq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egH-0X-L98" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1134" y="1741"/>
+            <point key="canvasLocation" x="1106" y="1659"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aTf-hQ-ZPr">

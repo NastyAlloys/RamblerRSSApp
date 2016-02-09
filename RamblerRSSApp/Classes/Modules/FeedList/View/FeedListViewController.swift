@@ -20,10 +20,17 @@ class FeedListViewController: UITableViewController {
     var selectedIndexPath: NSIndexPath?
     var previousIndexPath: NSIndexPath?
     var strongTableView: UITableView?
+    
+    var refreshItem: UIBarButtonItem?
+    
+    @IBOutlet weak var activityIndicatorView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     // MARK: Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.startAnimating()
         strongTableView = tableView
         configureView()
     }
@@ -35,18 +42,34 @@ class FeedListViewController: UITableViewController {
     
     func configureView() {
         navigationItem.title = "RamblerRSSApp"
+        refreshItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: self, action: Selector("updateView"))
         
-        let refreshItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: self, action: Selector("updateView"))
-        
+        self.strongTableView!.scrollRectToVisible(CGRectMake(1, 1, 0, 0), animated: false)
         navigationItem.rightBarButtonItem = refreshItem
+        
     }
     
     func updateView() {
+        self.refreshItem?.enabled = false
+        displayData?.items.removeAll()
         feedListPresenter?.updateView()
+        
+        activityIndicator.hidden = false
+        activityIndicator.startAnimating()
+
+        reloadData()
+        
     }
-    
+
     func reloadData() {
-        strongTableView!.reloadData()
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.refreshItem?.enabled = true
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.hidden = true
+            self.strongTableView!.reloadData()
+            self.strongTableView!.scrollRectToVisible(CGRectMake(0, 0, 0, 0), animated: false)
+        })
+        
     }
     
     func showUpcomingDisplayData(data: FeedListDisplayData) {
@@ -118,33 +141,19 @@ class FeedListViewController: UITableViewController {
             cell.detailTextLabel!.text = ""
         }
         
-//        var mediaThumbnail: RSSMediaThumbnail?
-//        
-//        if feedItem!.mediaThumbnails.count >= 2 {
-//            mediaThumbnail = feedItem!.mediaThumbnails[1] as? RSSMediaThumbnail
-//        } else {
-//            mediaThumbnail = (feedItem!.mediaThumbnails as NSArray).firstObject as? RSSMediaThumbnail
-//        }
-//        
-//        cell.imageView!.image = nil
-//        
-//        if let url = mediaThumbnail?.url {
-//            cell.imageView!.setImageWithURL(url)
-//        }
+        var mediaThumbnail: RSSMediaThumbnail?
         
-//        var mediaThumbnail: RSSMediaThumbnail?
-//        
-//        let mediaThumbnailArray = feedItem!.mediaThumbnails as! [RSSMediaThumbnail]
-//        
-//        for mediaThumbnail in mediaThumbnailArray {
-//            if mediaThumbnail.url != nil {
-//                if feedItem!.mediaThumbnails.count >= 2 {
-//                    mediaThumbnail = feedItem.mediaThumbnails[1] as? RSSMediaThumbnail
-//                } else {
-//                    mediaThumbnail = (feedItem.mediaThumbnails as NSArray).firstObject as? RSSMediaThumbnail
-//                }
-//            }
-//        }
+        let mediaThumbnailArray = feedItem!.mediaThumbnails as! [RSSMediaThumbnail]
+        
+        for mediaThumbnailEl in mediaThumbnailArray {
+            if mediaThumbnailEl.url != nil {
+                if feedItem!.mediaThumbnails.count >= 2 {
+                    mediaThumbnail = feedItem!.mediaThumbnails[1] as? RSSMediaThumbnail
+                } else {
+                    mediaThumbnail = (feedItem!.mediaThumbnails as NSArray).firstObject as? RSSMediaThumbnail
+                }
+            }
+        }
         
         return cell
     }

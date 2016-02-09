@@ -32,4 +32,5 @@ class FeedListInteractor: NSObject, FeedListInteractorInput {
             self.output.presentFetchedFeeds(response!)
         })
     }
+    
 }
