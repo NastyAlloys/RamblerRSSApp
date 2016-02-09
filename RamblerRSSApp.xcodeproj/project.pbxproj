@@ -11,7 +11,6 @@
 		E00DABA41C61104000D801AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E00DABA21C61104000D801AA /* Main.storyboard */; };
 		E00DABA61C61104000D801AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E00DABA51C61104000D801AA /* Assets.xcassets */; };
 		E00DABA91C61104000D801AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E00DABA71C61104000D801AA /* LaunchScreen.storyboard */; };
-		E00F144A1C6A6C52009330AE /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F14491C6A6C52009330AE /* MockView.swift */; };
 		E010D2D01C68A50800C78199 /* FeedListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2C11C68A50800C78199 /* FeedListInteractor.swift */; };
 		E010D2D11C68A50800C78199 /* FeedListInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2C21C68A50800C78199 /* FeedListInteractorIO.swift */; };
 		E010D2D41C68A50800C78199 /* FeedListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2C61C68A50800C78199 /* FeedListPresenter.swift */; };
@@ -37,7 +36,6 @@
 		E00DABA51C61104000D801AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E00DABA81C61104000D801AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E00DABAA1C61104000D801AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E00F14491C6A6C52009330AE /* MockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockView.swift; path = RamblerRSSAppTests/MockView.swift; sourceTree = SOURCE_ROOT; };
 		E010D2C11C68A50800C78199 /* FeedListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListInteractor.swift; sourceTree = "<group>"; };
 		E010D2C21C68A50800C78199 /* FeedListInteractorIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListInteractorIO.swift; sourceTree = "<group>"; };
 		E010D2C61C68A50800C78199 /* FeedListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListPresenter.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 				E010D2BB1C68A50800C78199 /* Modules */,
 				E010D2F21C68F63400C78199 /* AppDelegate.swift */,
 				E010D2F41C68F66500C78199 /* AppDependencies.swift */,
-				E00F14491C6A6C52009330AE /* MockView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -341,7 +338,6 @@
 			files = (
 				E010D2F81C68F68800C78199 /* RootWireframe.swift in Sources */,
 				E010D2FB1C68F75D00C78199 /* FeedListWireframe.swift in Sources */,
-				E00F144A1C6A6C52009330AE /* MockView.swift in Sources */,
 				E010D2D11C68A50800C78199 /* FeedListInteractorIO.swift in Sources */,
 				E010D2FD1C68FA1A00C78199 /* FeedListModuleInterface.swift in Sources */,
 				E010D2D61C68A50800C78199 /* FeedListRouterInput.swift in Sources */,
