@@ -14,8 +14,6 @@
 		E010D2D01C68A50800C78199 /* FeedListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2C11C68A50800C78199 /* FeedListInteractor.swift */; };
 		E010D2D11C68A50800C78199 /* FeedListInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2C21C68A50800C78199 /* FeedListInteractorIO.swift */; };
 		E010D2D41C68A50800C78199 /* FeedListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2C61C68A50800C78199 /* FeedListPresenter.swift */; };
-		E010D2D51C68A50800C78199 /* FeedListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2C81C68A50800C78199 /* FeedListRouter.swift */; };
-		E010D2D61C68A50800C78199 /* FeedListRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2C91C68A50800C78199 /* FeedListRouterInput.swift */; };
 		E010D2D71C68A50800C78199 /* FeedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2CB1C68A50800C78199 /* FeedListViewController.swift */; };
 		E010D2E51C68BDB500C78199 /* FeedListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2E41C68BDB500C78199 /* FeedListDataManager.swift */; };
 		E010D2E71C68C45800C78199 /* MediaRSSParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E010D2E61C68C45800C78199 /* MediaRSSParser.framework */; };
@@ -39,8 +37,6 @@
 		E010D2C11C68A50800C78199 /* FeedListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListInteractor.swift; sourceTree = "<group>"; };
 		E010D2C21C68A50800C78199 /* FeedListInteractorIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListInteractorIO.swift; sourceTree = "<group>"; };
 		E010D2C61C68A50800C78199 /* FeedListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListPresenter.swift; sourceTree = "<group>"; };
-		E010D2C81C68A50800C78199 /* FeedListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListRouter.swift; sourceTree = "<group>"; };
-		E010D2C91C68A50800C78199 /* FeedListRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListRouterInput.swift; sourceTree = "<group>"; };
 		E010D2CB1C68A50800C78199 /* FeedListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListViewController.swift; sourceTree = "<group>"; };
 		E010D2E41C68BDB500C78199 /* FeedListDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListDataManager.swift; sourceTree = "<group>"; };
 		E010D2E61C68C45800C78199 /* MediaRSSParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaRSSParser.framework; path = "Pods/../build/Debug-iphoneos/MediaRSSParser.framework"; sourceTree = "<group>"; };
@@ -130,7 +126,6 @@
 				E010D2E31C68BD8000C78199 /* Manager */,
 				E010D2C01C68A50800C78199 /* Interactor */,
 				E010D2C41C68A50800C78199 /* Presenter */,
-				E010D2C71C68A50800C78199 /* Router */,
 				E010D2CA1C68A50800C78199 /* View */,
 			);
 			path = FeedList;
@@ -152,15 +147,6 @@
 				E010D2FC1C68FA1A00C78199 /* FeedListModuleInterface.swift */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		E010D2C71C68A50800C78199 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				E010D2C81C68A50800C78199 /* FeedListRouter.swift */,
-				E010D2C91C68A50800C78199 /* FeedListRouterInput.swift */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		E010D2CA1C68A50800C78199 /* View */ = {
@@ -340,13 +326,11 @@
 				E010D2FB1C68F75D00C78199 /* FeedListWireframe.swift in Sources */,
 				E010D2D11C68A50800C78199 /* FeedListInteractorIO.swift in Sources */,
 				E010D2FD1C68FA1A00C78199 /* FeedListModuleInterface.swift in Sources */,
-				E010D2D61C68A50800C78199 /* FeedListRouterInput.swift in Sources */,
 				E010D2E51C68BDB500C78199 /* FeedListDataManager.swift in Sources */,
 				E010D2ED1C68E31400C78199 /* FeedListDisplayData.swift in Sources */,
 				E010D2F51C68F66500C78199 /* AppDependencies.swift in Sources */,
 				E010D2F31C68F63400C78199 /* AppDelegate.swift in Sources */,
 				E010D2D01C68A50800C78199 /* FeedListInteractor.swift in Sources */,
-				E010D2D51C68A50800C78199 /* FeedListRouter.swift in Sources */,
 				E010D2D71C68A50800C78199 /* FeedListViewController.swift in Sources */,
 				E010D2D41C68A50800C78199 /* FeedListPresenter.swift in Sources */,
 			);
