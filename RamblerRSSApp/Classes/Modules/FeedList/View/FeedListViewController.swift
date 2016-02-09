@@ -145,14 +145,20 @@ class FeedListViewController: UITableViewController {
         
         let mediaThumbnailArray = feedItem!.mediaThumbnails as! [RSSMediaThumbnail]
         
-        for mediaThumbnailEl in mediaThumbnailArray {
-            if mediaThumbnailEl.url != nil {
+        for mediaThumbnailElement in mediaThumbnailArray {
+            if mediaThumbnailElement.url != nil {
                 if feedItem!.mediaThumbnails.count >= 2 {
                     mediaThumbnail = feedItem!.mediaThumbnails[1] as? RSSMediaThumbnail
                 } else {
                     mediaThumbnail = (feedItem!.mediaThumbnails as NSArray).firstObject as? RSSMediaThumbnail
                 }
             }
+        }
+        
+        cell.imageView?.image = nil
+        
+        if let url = mediaThumbnail?.url {
+            cell.imageView?.setImageWithURL(url)
         }
         
         return cell
