@@ -11,6 +11,7 @@
 		E00DABA41C61104000D801AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E00DABA21C61104000D801AA /* Main.storyboard */; };
 		E00DABA61C61104000D801AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E00DABA51C61104000D801AA /* Assets.xcassets */; };
 		E00DABA91C61104000D801AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E00DABA71C61104000D801AA /* LaunchScreen.storyboard */; };
+		E00F144A1C6A6C52009330AE /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F14491C6A6C52009330AE /* MockView.swift */; };
 		E010D2D01C68A50800C78199 /* FeedListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2C11C68A50800C78199 /* FeedListInteractor.swift */; };
 		E010D2D11C68A50800C78199 /* FeedListInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2C21C68A50800C78199 /* FeedListInteractorIO.swift */; };
 		E010D2D41C68A50800C78199 /* FeedListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2C61C68A50800C78199 /* FeedListPresenter.swift */; };
@@ -25,33 +26,7 @@
 		E010D2F81C68F68800C78199 /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2F71C68F68800C78199 /* RootWireframe.swift */; };
 		E010D2FB1C68F75D00C78199 /* FeedListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2FA1C68F75D00C78199 /* FeedListWireframe.swift */; };
 		E010D2FD1C68FA1A00C78199 /* FeedListModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2FC1C68FA1A00C78199 /* FeedListModuleInterface.swift */; };
-		E0A10E161C694FBC008E24A7 /* RamblerRSSAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A10E151C694FBC008E24A7 /* RamblerRSSAppTests.swift */; };
-		E0A10E1E1C694FE5008E24A7 /* PresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A10E1D1C694FE5008E24A7 /* PresenterTests.swift */; };
-		E0A10E201C6951BB008E24A7 /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2F71C68F68800C78199 /* RootWireframe.swift */; };
-		E0A10E211C6951BB008E24A7 /* FeedListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2FA1C68F75D00C78199 /* FeedListWireframe.swift */; };
-		E0A10E221C6951BB008E24A7 /* FeedListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2E41C68BDB500C78199 /* FeedListDataManager.swift */; };
-		E0A10E231C6951BB008E24A7 /* FeedListDisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2EC1C68E31400C78199 /* FeedListDisplayData.swift */; };
-		E0A10E241C6951BB008E24A7 /* FeedListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2C11C68A50800C78199 /* FeedListInteractor.swift */; };
-		E0A10E251C6951BB008E24A7 /* FeedListInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2C21C68A50800C78199 /* FeedListInteractorIO.swift */; };
-		E0A10E261C6951BB008E24A7 /* FeedListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2C61C68A50800C78199 /* FeedListPresenter.swift */; };
-		E0A10E271C6951BB008E24A7 /* FeedListModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2FC1C68FA1A00C78199 /* FeedListModuleInterface.swift */; };
-		E0A10E281C6951BB008E24A7 /* FeedListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2C81C68A50800C78199 /* FeedListRouter.swift */; };
-		E0A10E291C6951BB008E24A7 /* FeedListRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2C91C68A50800C78199 /* FeedListRouterInput.swift */; };
-		E0A10E2A1C6951BB008E24A7 /* FeedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2CB1C68A50800C78199 /* FeedListViewController.swift */; };
-		E0A10E2B1C6951BB008E24A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2F21C68F63400C78199 /* AppDelegate.swift */; };
-		E0A10E2C1C6951BB008E24A7 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010D2F41C68F66500C78199 /* AppDependencies.swift */; };
-		E0A10E2E1C695660008E24A7 /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A10E2D1C695660008E24A7 /* MockView.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E0A10E181C694FBC008E24A7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E00DAB931C61104000D801AA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E00DAB9A1C61104000D801AA;
-			remoteInfo = RamblerRSSApp;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2A3C5E53EFC89F18D45AC054 /* Pods-RamblerRSSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamblerRSSApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RamblerRSSApp/Pods-RamblerRSSApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -62,6 +37,7 @@
 		E00DABA51C61104000D801AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E00DABA81C61104000D801AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E00DABAA1C61104000D801AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E00F14491C6A6C52009330AE /* MockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockView.swift; path = RamblerRSSAppTests/MockView.swift; sourceTree = SOURCE_ROOT; };
 		E010D2C11C68A50800C78199 /* FeedListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListInteractor.swift; sourceTree = "<group>"; };
 		E010D2C21C68A50800C78199 /* FeedListInteractorIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListInteractorIO.swift; sourceTree = "<group>"; };
 		E010D2C61C68A50800C78199 /* FeedListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListPresenter.swift; sourceTree = "<group>"; };
@@ -76,11 +52,6 @@
 		E010D2F71C68F68800C78199 /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
 		E010D2FA1C68F75D00C78199 /* FeedListWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListWireframe.swift; sourceTree = "<group>"; };
 		E010D2FC1C68FA1A00C78199 /* FeedListModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListModuleInterface.swift; sourceTree = "<group>"; };
-		E0A10E131C694FBC008E24A7 /* RamblerRSSAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RamblerRSSAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0A10E151C694FBC008E24A7 /* RamblerRSSAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamblerRSSAppTests.swift; sourceTree = "<group>"; };
-		E0A10E171C694FBC008E24A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0A10E1D1C694FE5008E24A7 /* PresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterTests.swift; sourceTree = "<group>"; };
-		E0A10E2D1C695660008E24A7 /* MockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,13 +61,6 @@
 			files = (
 				E010D2E71C68C45800C78199 /* MediaRSSParser.framework in Frameworks */,
 				D3295FFE95C59825AEC15125 /* Pods_RamblerRSSApp.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E0A10E101C694FBC008E24A7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				E00DAB9D1C61104000D801AA /* RamblerRSSApp */,
-				E0A10E141C694FBC008E24A7 /* RamblerRSSAppTests */,
 				E00DAB9C1C61104000D801AA /* Products */,
 				C5CF7697537012920CFB27EE /* Pods */,
 				E67910A7C74957D64E901A00 /* Frameworks */,
@@ -127,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				E00DAB9B1C61104000D801AA /* RamblerRSSApp.app */,
-				E0A10E131C694FBC008E24A7 /* RamblerRSSAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +113,7 @@
 				E010D2BB1C68A50800C78199 /* Modules */,
 				E010D2F21C68F63400C78199 /* AppDelegate.swift */,
 				E010D2F41C68F66500C78199 /* AppDependencies.swift */,
+				E00F14491C6A6C52009330AE /* MockView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -244,17 +207,6 @@
 			name = Wireframe;
 			sourceTree = "<group>";
 		};
-		E0A10E141C694FBC008E24A7 /* RamblerRSSAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				E0A10E2D1C695660008E24A7 /* MockView.swift */,
-				E0A10E1D1C694FE5008E24A7 /* PresenterTests.swift */,
-				E0A10E151C694FBC008E24A7 /* RamblerRSSAppTests.swift */,
-				E0A10E171C694FBC008E24A7 /* Info.plist */,
-			);
-			path = RamblerRSSAppTests;
-			sourceTree = "<group>";
-		};
 		E67910A7C74957D64E901A00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,24 +239,6 @@
 			productReference = E00DAB9B1C61104000D801AA /* RamblerRSSApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E0A10E121C694FBC008E24A7 /* RamblerRSSAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E0A10E1A1C694FBC008E24A7 /* Build configuration list for PBXNativeTarget "RamblerRSSAppTests" */;
-			buildPhases = (
-				E0A10E0F1C694FBC008E24A7 /* Sources */,
-				E0A10E101C694FBC008E24A7 /* Frameworks */,
-				E0A10E111C694FBC008E24A7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E0A10E191C694FBC008E24A7 /* PBXTargetDependency */,
-			);
-			name = RamblerRSSAppTests;
-			productName = RamblerRSSAppTests;
-			productReference = E0A10E131C694FBC008E24A7 /* RamblerRSSAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -318,11 +252,6 @@
 					E00DAB9A1C61104000D801AA = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 3C92DATLYT;
-					};
-					E0A10E121C694FBC008E24A7 = {
-						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 3C92DATLYT;
-						TestTargetID = E00DAB9A1C61104000D801AA;
 					};
 				};
 			};
@@ -340,7 +269,6 @@
 			projectRoot = "";
 			targets = (
 				E00DAB9A1C61104000D801AA /* RamblerRSSApp */,
-				E0A10E121C694FBC008E24A7 /* RamblerRSSAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -353,13 +281,6 @@
 				E00DABA91C61104000D801AA /* LaunchScreen.storyboard in Resources */,
 				E00DABA61C61104000D801AA /* Assets.xcassets in Resources */,
 				E00DABA41C61104000D801AA /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E0A10E111C694FBC008E24A7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +341,7 @@
 			files = (
 				E010D2F81C68F68800C78199 /* RootWireframe.swift in Sources */,
 				E010D2FB1C68F75D00C78199 /* FeedListWireframe.swift in Sources */,
+				E00F144A1C6A6C52009330AE /* MockView.swift in Sources */,
 				E010D2D11C68A50800C78199 /* FeedListInteractorIO.swift in Sources */,
 				E010D2FD1C68FA1A00C78199 /* FeedListModuleInterface.swift in Sources */,
 				E010D2D61C68A50800C78199 /* FeedListRouterInput.swift in Sources */,
@@ -434,38 +356,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E0A10E0F1C694FBC008E24A7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E0A10E201C6951BB008E24A7 /* RootWireframe.swift in Sources */,
-				E0A10E211C6951BB008E24A7 /* FeedListWireframe.swift in Sources */,
-				E0A10E221C6951BB008E24A7 /* FeedListDataManager.swift in Sources */,
-				E0A10E231C6951BB008E24A7 /* FeedListDisplayData.swift in Sources */,
-				E0A10E241C6951BB008E24A7 /* FeedListInteractor.swift in Sources */,
-				E0A10E251C6951BB008E24A7 /* FeedListInteractorIO.swift in Sources */,
-				E0A10E261C6951BB008E24A7 /* FeedListPresenter.swift in Sources */,
-				E0A10E271C6951BB008E24A7 /* FeedListModuleInterface.swift in Sources */,
-				E0A10E281C6951BB008E24A7 /* FeedListRouter.swift in Sources */,
-				E0A10E291C6951BB008E24A7 /* FeedListRouterInput.swift in Sources */,
-				E0A10E2A1C6951BB008E24A7 /* FeedListViewController.swift in Sources */,
-				E0A10E2B1C6951BB008E24A7 /* AppDelegate.swift in Sources */,
-				E0A10E2C1C6951BB008E24A7 /* AppDependencies.swift in Sources */,
-				E0A10E1E1C694FE5008E24A7 /* PresenterTests.swift in Sources */,
-				E0A10E2E1C695660008E24A7 /* MockView.swift in Sources */,
-				E0A10E161C694FBC008E24A7 /* RamblerRSSAppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E0A10E191C694FBC008E24A7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E00DAB9A1C61104000D801AA /* RamblerRSSApp */;
-			targetProxy = E0A10E181C694FBC008E24A7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E00DABA21C61104000D801AA /* Main.storyboard */ = {
@@ -604,30 +495,6 @@
 			};
 			name = Release;
 		};
-		E0A10E1B1C694FBC008E24A7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = RamblerRSSAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Rambler.RamblerRSSAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RamblerRSSApp.app/RamblerRSSApp";
-			};
-			name = Debug;
-		};
-		E0A10E1C1C694FBC008E24A7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = RamblerRSSAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Rambler.RamblerRSSAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RamblerRSSApp.app/RamblerRSSApp";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -648,14 +515,6 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		};
-		E0A10E1A1C694FBC008E24A7 /* Build configuration list for PBXNativeTarget "RamblerRSSAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E0A10E1B1C694FBC008E24A7 /* Debug */,
-				E0A10E1C1C694FBC008E24A7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
