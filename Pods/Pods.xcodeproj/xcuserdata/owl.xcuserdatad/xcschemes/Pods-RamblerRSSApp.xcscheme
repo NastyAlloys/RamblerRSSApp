@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B791E94EDB6EEC0AF8600222'
+               BlueprintIdentifier = '36A189B5D01DF7AA9C9F6F9D'
                BlueprintName = 'Pods-RamblerRSSApp'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_RamblerRSSApp.framework'>

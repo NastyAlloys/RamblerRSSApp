@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '114C28090D6B4F228A5D4F5B'
+               BlueprintIdentifier = 'BF211127988F7D9F5C46EEA2'
                BlueprintName = 'MediaRSSParser'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'MediaRSSParser.framework'>

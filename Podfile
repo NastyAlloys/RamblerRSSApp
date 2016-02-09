@@ -4,5 +4,5 @@ use_frameworks!
 
 target 'RamblerRSSApp' do
     pod 'MediaRSSParser', '~> 1.0'
-    pod 'Alamofire', '~> 3.0'
+    pod 'MBProgressHUD', '~> 0.9.2'
 end
