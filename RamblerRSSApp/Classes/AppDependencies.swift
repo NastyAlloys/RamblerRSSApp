@@ -27,31 +27,13 @@ class AppDependencies {
         let feedListDataManager = FeedListDataManager()
         let feedListInteractor = FeedListInteractor(dataManager: feedListDataManager)
         
-//        let addWireframe = AddWireframe()
-//        let addInteractor = AddInteractor()
-//        let addPresenter = AddPresenter()
-//        let addDataManager = AddDataManager()
-        
         feedListInteractor.output = feedListPresenter
         
         feedListPresenter.feedListInteractor = feedListInteractor
         feedListPresenter.feedListWireframe = feedListWireframe
         
-//        listWireframe.addWireframe = addWireframe
         feedListWireframe.feedListPresenter = feedListPresenter
         feedListWireframe.rootWireframe = rootWireframe
-        
-//        feedListDataManager.coreDataStore = coreDataStore
-        
-//        addInteractor.addDataManager = addDataManager
-//        
-//        addWireframe.addPresenter = addPresenter
-        
-//        addPresenter.addWireframe = addWireframe
-//        addPresenter.addModuleDelegate = listPresenter
-//        addPresenter.addInteractor = addInteractor
-//        
-//        addDataManager.dataStore = coreDataStore
     }
 
 }

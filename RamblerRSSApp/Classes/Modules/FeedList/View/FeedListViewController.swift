@@ -13,8 +13,6 @@ import AFNetworking
 let cellIdentifier = "FeedCellIdentifier"
 
 class FeedListViewController: UITableViewController {
-    
-//    var eventHandler : FeedListModuleInterface?
     var feedListPresenter: FeedListPresenter?
     var displayData: FeedListDisplayData?
     var selectedIndexPath: NSIndexPath?
