@@ -12,7 +12,6 @@ import UIKit
 let FeedListViewControllerIdentifier = "FeedListViewController"
 
 class FeedListWireframe : NSObject {
-//    var addWireframe : AddWireframe?
     var feedListPresenter : FeedListPresenter?
     var rootWireframe : RootWireframe?
     var feedListViewController : FeedListViewController?
@@ -25,12 +24,6 @@ class FeedListWireframe : NSObject {
         feedListPresenter.userInterface = viewController
         rootWireframe?.showRootViewController(viewController, inWindow: window)
     }
-    
-    /*func presentAddInterface() {
-        if let listViewController = listViewController {
-            addWireframe?.presentAddInterfaceFromViewController(listViewController)
-        }
-    }*/
     
     func listViewControllerFromStoryboard() -> FeedListViewController? {
         let storyboard = mainStoryboard()

@@ -62,16 +62,6 @@ class FeedListDataManager: NSObject {
             if let title = item.title as NSString! {
                 item.title = title.stringByConvertingHTMLToPlainText().stringByTrimmingCharactersInSet(charSet)
             }
-            
-            /*if let mediaDescription = item.mediaDescription as NSString! {
-            
-            item.mediaDescription = mediaDescription.stringByConvertingHTMLToPlainText().stringByTrimmingCharactersInSet(charSet)
-            }
-            
-            if let mediaText = item.mediaText as NSString! {
-            print("text: \(mediaText)")
-            item.mediaText = mediaText.stringByConvertingHTMLToPlainText().stringByTrimmingCharactersInSet(charSet)
-            }*/
         }
     }
 }
